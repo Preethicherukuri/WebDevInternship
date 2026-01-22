@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 5</title>
+
+    <style>
+        /* common box styling for all grid items */
+        .items{
+            border: 2px solid black;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* hover effect */
+        .items:hover{
+            box-shadow: 10px 10px 20px rgba(0,0,0,0.7);
+        }
+
+        /* header */
+        .header{
+            grid-area: header;
+            background-color: lightblue;
+        }
+
+        /* sidebar */
+        .sidebar{
+            grid-area: sidebar;
+            background-color: lightgreen;
+        }
+
+        /* main content */
+        .content{
+            grid-area: content;
+            background-color: lightpink;
+        }
+
+        /* footer */
+        .footer{
+            grid-area: footer;
+            background-color: lightgray;
+        }
+
+        /* Desktop View */
+        .container{
+            display: grid;
+            height: 100vh;
+            box-sizing: border-box;
+            gap: 10px;
+            padding: 10px;
+
+            grid-template-areas:
+                'header header'
+                'sidebar content'
+                'footer footer';
+            
+            grid-template-rows: 1fr 2fr 1fr;
+            grid-template-columns: minmax(20%, 1fr) minmax(60%, 2fr);
+        }
+
+        /* Tablet View */
+        @media (max-width: 900px){
+            .container{
+                grid-template-areas:
+                    'header'
+                    'sidebar'
+                    'content'
+                    'footer';
+                
+                grid-template-rows: repeat(4, auto);
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Mobile View */
+        @media (max-width: 600px){
+            .container{
+                grid-template-rows: auto;
+                grid-template-columns: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header items">
+            <h1>This is Header</h1>
+        </div>
+        <div class="sidebar items">
+            <h1>This is Sidebar</h1>
+        </div>
+        <div class="content items">
+            <h1>This is Main Content</h1>
+        </div>
+        <div class="footer items">
+            <h1>This is Footer</h1>
+        </div>
+    </div>
+</body>
+</html>

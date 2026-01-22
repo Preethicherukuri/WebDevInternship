@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 4</title>
+    <style>
+        
+        /* common style for all sections */
+        .items{
+            border: 2px solid black;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /*header style*/
+        .header{
+            grid-area: header;
+            background-color: lightblue;
+        }
+
+        /*sidebar style*/
+        .sidebar{
+            grid-area: sidebar;
+            background-color: lightgreen;
+        }
+
+        /*main content style*/
+        .Content{
+            grid-area: content;
+            background-color: lightpink;
+        }
+
+        /*footer style*/
+        .footer{
+            grid-area: footer;
+            background-color: lightgray;
+        }
+
+        /*Container style*/
+        .container{
+            display: grid;
+            height: 100vh;
+            box-sizing: border-box;
+            gap: 10px;
+            padding: 10px;
+
+            grid-template-areas:
+                'header header'
+                'sidebar content'
+                'footer footer';
+            
+            /*Main Layout*/
+            grid-template-rows: 1fr 2fr 1fr;
+            grid-template-columns: 1fr 2fr;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header items">
+            <h1>This is Header</h1>
+        </div>
+        <div class="sidebar items">
+            <h2>This is Sidebar</h2>
+        </div>
+        <div class="Content items">
+            <h2>This is Main Content</h2>
+        </div>
+        <div class="footer items">
+            <h2>This is Footer</h2>
+        </div>
+    </div>
+</body>
+</html>

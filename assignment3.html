@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 3</title>
+    <style>
+
+        /*box styling*/
+        .bg{
+            background-color: lightblue;
+            border: 1px solid black;
+            place-items: center;
+        }
+
+        /*alternate bg colors by changing odd elements*/
+        .bg:nth-child(odd){
+            background-color: lightgreen;
+        }
+
+        /*Parent container styling*/
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: auto auto;
+            gap: 10px;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="grid-item-1 bg">
+            <h2>Box 1</h2>
+        </div>
+        <div class="grid-item-2 bg">
+            <h2>Box 2</h2>
+        </div>
+        <div class="grid-item-3 bg">
+            <h2>Box 3</h2>
+        </div>
+        <div class="grid-item-4 bg">
+            <h2>Box 4</h2>
+        </div>
+        <div class="grid-item-5 bg">
+            <h2>Box 5</h2>
+        </div>
+        <div class="grid-item-6 bg">
+            <h2>Box 6</h2>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="title">
+            <h1>User Management System </h1>
+        </div>
+        <div id="options">
+            <h3>Select any of the following options:</h3>
+            <div class="buttons">
+                <button onclick="hideAddUserForm(); hideFilterOptions(); hideActiveUsers(); document.getElementById('addUserForm').style.display = 'block';">Add user</button>
+                <button onclick="hideAddUserForm(); hideFilterOptions(); hideActiveUsers(); loadUsersAsync()">Display Users</button>
+                <button onclick="hideAddUserForm(); hideFilterOptions(); hideActiveUsers(); changeStatus(Number(prompt('Enter Id to change Active Status')))">Change the status</button>
+                <button onclick="hideAddUserForm(); hideFilterOptions(); hideActiveUsers(); deleteUser(Number(prompt('Enter user ID to delete:')))">Delete a user</button>
+                <button id="filterbtn" onclick="hideAddUserForm(); hideActiveUsers();">Filter users</button>
+                <button onclick="hideAddUserForm(); hideFilterOptions(); ActiveUsers()">Show active users</button>
+            </div>
+            <div class="radioList">
+                <label>
+                    <input type="radio" name="role" value="admin" onclick="filterByRole('admin')"> Admin
+                </label>
+                <label>
+                    <input type="radio" name="role" value="user" onclick="filterByRole('user')"> User
+                </label>
+                <label>
+                    <input type="radio" name="role" value="guest" onclick="filterByRole('guest')"> Guest
+                </label>
+            </div>
+            <div id="addUserForm" style="display:none;">
+                <h3>Add New User</h3>
+                <input type="text" id="name" placeholder="Name">
+                <input type="email" id="email" placeholder="Email">
+                <select id="role">
+                    <option value="">Select Role</option>
+                    <option value="admin">Admin</option>
+                    <option value="user">User</option>
+                    <option value="guest">Guest</option>
+                </select>
+                <input type="checkbox" id="isActive"> Active</input>
+                <button id="submitUserBtn" onclick="submitUser()">Submit</button>
+
+            </div>
+        </div>
+        <div id="userList"></div>
+
+   </div>
+   <script src="script.js"></script>
+</body>
+</html>

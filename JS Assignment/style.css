@@ -1,0 +1,95 @@
+body{
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#title {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#options{
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#options h3{
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+
+#options button{
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    width: 30%;
+}
+
+.buttons{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+#options button:hover{
+    background-color: #0056b3;
+    cursor: pointer;
+}
+
+#userList{
+    display: none;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 600px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.radioList{
+    display:none;
+    margin-top: 20px;
+    text-align: center;
+}
+
+#addUserForm{
+    text-align: center;
+    display: none;
+    margin: 20px auto;          /* centers the form itself */
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 560px;
+}
+
+#addUserForm input,
+#addUserForm select {
+    margin-bottom: 15px;
+}
